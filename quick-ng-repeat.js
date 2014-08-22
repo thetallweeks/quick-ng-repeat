@@ -247,7 +247,7 @@ angular.module('QuickList').directive('quickNgRepeat',
                 nextBlockMap[block.id] = block;
               });
 
-              if ($rootScope.$$phase !== '$digest' && childScope.$$phase !== '$digest'){
+              if (!childScope.$$phase){
                 childScope.$digest();
               }
             }
